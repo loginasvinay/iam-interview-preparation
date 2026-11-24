@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="data:,">
 <title>Auth Reference — Protocols, Passkeys & Modern Identity</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme: light;
   --bg:#f7f2e7; --surface:#ffffff; --surface2:#eef7f4; --ink:#22303c; --muted:#5c6a72; --line:#d8d2c0;
   --teal:#0f766e; --teal-dark:#0b3b4f; --navy:#0b3b4f; --amber:#d97706; --amber-bg:#fff7e0; --red:#c2410c; --blue:#1d6fb8;
   --olive:#8a7f5c; --deep:#123332;
@@ -17,11 +18,8 @@
   --font-sans:"Segoe UI","Noto Sans","DejaVu Sans",Arial,sans-serif;
   --font-mono:"Noto Sans Mono",Consolas,"DejaVu Sans Mono",monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root{ --bg:#101a1d; --surface:#182227; --surface2:#1d2b2e; --ink:#f0ead8; --muted:#a8b3ac; --line:#33454a; --teal:#3ec9ae; --teal-dark:#7dd3c8; --navy:#123332; --amber:#e8a33d; --amber-bg:#2e2610; --red:#f0836a; --blue:#7db8ec; --chip:#173a35; --code-bg:#0a1418; --code-ink:#d9ecec; }
-}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.55}
+*{box-sizing:border-box} html{scroll-behavior:smooth;color-scheme:light;background:#f7f2e7}
+body{margin:0;font-family:var(--font-sans);background:#f7f2e7;background:var(--bg);color:#22303c;color:var(--ink);line-height:1.55}
 a{color:var(--teal-dark)}
 button,input,select{font:inherit;min-height:44px}
 .topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:4px solid var(--teal);padding:10px 16px 0}
@@ -114,7 +112,7 @@ textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px
 .flow li{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px;align-items:flex-start}
 .flow li:last-child{border-bottom:none}
 .num{width:24px;height:24px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;flex-shrink:0;font-size:12px;font-weight:700;margin-top:1px}
-.num.back{background:var(--navy)} @media(prefers-color-scheme:dark){.num.back{background:#2b5a54}}
+.num.back{background:var(--navy)}
 .actor{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-right:6px;white-space:nowrap}
 .flow .what{flex:1}
 .strip{display:flex;align-items:stretch;flex-wrap:wrap;gap:0}
@@ -133,7 +131,6 @@ textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px
 @media(max-width:640px){.outcomes{grid-template-columns:1fr 1fr}}
 .outcome{border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;text-align:center}
 .oc-allow{background:#e3f4ee;color:#0b5a50}.oc-step{background:#fff7e0;color:#8a5d10}.oc-limit{background:#e7f0fa;color:#1d6fb8}.oc-deny{background:#fdf1ec;color:#c2410c}
-@media(prefers-color-scheme:dark){.oc-allow{background:#173a31;color:#7fe3c8}.oc-step{background:#3a2f10;color:#f2cd72}.oc-limit{background:#1b2c52;color:#9db9f5}.oc-deny{background:#3d2015;color:#f2a49c}}
 .vendorline{font-size:17px;line-height:1.5;font-style:italic;color:var(--teal-dark)}
 .picfig{margin:0 0 12px;background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:12px}
 .picfig img{display:block;width:100%;height:auto;border-radius:10px}
@@ -173,6 +170,10 @@ textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px
   .diagram{padding:14px}
   .picfig{padding:8px}
 }
+
+/* ---- light only: cream aggregate look in every device mode ---- */
+html,body{color-scheme:light;background:#f7f2e7 !important}
+input,textarea,select{color-scheme:light}
 
 </style>
 </head>
